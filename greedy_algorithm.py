@@ -32,8 +32,8 @@ def stoch_knapsack(items,weight):
     if not items:
         return 0
     items = sorted(items, key= lambda item: item.expected_return(weight)/item.exp_w)
-    selected =items.pop(0)
-    value = selected.expected_return(weight)
+    selected = items.pop(0)
+    value = selected.exp_v
     used_cost = random.randint(selected.min_w,selected.max_w)
     if used_cost > weight:
         return 0
